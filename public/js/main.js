@@ -12,6 +12,7 @@ function bindButton() {
   const url3 = "https://trefle.io/api/plants/116138?token=NGxtMVFYbjdNV2JtTzQzK0xiQ2dTZz09"
   const url = 'https://rickandmortyapi.com/api/character/'
   let contentPgs = 0;
+  let charCnt = 0;
 
 
   //Preload the available characters in the API
@@ -20,10 +21,11 @@ function bindButton() {
     .then(response => {
       return response.json()
     })
-    //See how many pages with content are available and assign it to the contentPgs var
+    //See how many characters are available across how many pages
     .then(result => {
       contentPgs = result.info.pages;
-      console.log(`There are ${contentPgs} pages with content available`)
+      charCnt = result.info.count;
+      console.log(`There are ${charCnt} characters available in ${contentPgs} pages.`)
     })
     .catch(err => {
       return err;
@@ -39,13 +41,14 @@ function bindButton() {
             //Grab every result element (Characters) from the results array
             console.log(result)
             result.results.forEach(element => {
-              //Make a new <p> element with each character name
+              //Make a new <p> element with each character's name
               console.log(element)
               const p = document.createElement("p");
               p.textContent = element.name;
               p.setAttribute("class", "character__name");
               document.body.appendChild(p);
 
+               //Make a new <img> element with each character's image
               const img = document.createElement("img");
               img.src = element.image;
               img.setAttribute("class", "character__image");
