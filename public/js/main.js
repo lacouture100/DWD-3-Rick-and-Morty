@@ -14,43 +14,34 @@ function bindButton() {
   let contentPgs = 0;
 
 
-
+  //Preload the available characters in the API
+  //Parse the response stream as a JSON
   fetch(url)
     .then(response => {
       return response.json()
+      //console.log(response.json())
     })
+    //See how many pages with content are available and assign it to the contentPgs var
     .then(result => {
-      //console.log(result);
-      return result;
-    })
-    .then(result => {
-      contentPgs = result.info.pages;
-      //console.log(contentPgs);  
+      contentPgs = result.info.pages; 
     })
     .catch(err => {
       return err;
     })
-
-
   // to use await, the function must be marked as async
   button.onclick = async () => {
-
-
+    //Loop through ever available page and grab every result
     for (var pageNum = 1; pageNum < contentPgs; pageNum++) {
-      for (var i = 0; i < 19; i++) {
       fetch('https://rickandmortyapi.com/api/character/?page=' + pageNum)
-        .then(response => response.json())
-        .then(result => console.log(result.results[i].name))
+        //Fetch page number pagNum and parse as JSON
+          .then(response => response.json())
+          .then(result => {
+            //Grab every result element form the results array
+            console.log(result)
+            result.results.forEach(element => {
+              console.log(element)
+            });    
+          })
       }
-      console.log("page: "+ i);
-      
-        
-  
     }
-    //console.log(contentPgs);
-    
-
-
-
   }
-}
