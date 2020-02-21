@@ -19,11 +19,11 @@ function bindButton() {
   fetch(url)
     .then(response => {
       return response.json()
-      //console.log(response.json())
     })
     //See how many pages with content are available and assign it to the contentPgs var
     .then(result => {
-      contentPgs = result.info.pages; 
+      contentPgs = result.info.pages;
+      console.log(`There are ${contentPgs} pages with content available`)
     })
     .catch(err => {
       return err;
@@ -36,10 +36,20 @@ function bindButton() {
         //Fetch page number pagNum and parse as JSON
           .then(response => response.json())
           .then(result => {
-            //Grab every result element form the results array
+            //Grab every result element (Characters) from the results array
             console.log(result)
             result.results.forEach(element => {
+              //Make a new <p> element with each character name
               console.log(element)
+              const p = document.createElement("p");
+              p.textContent = element.name;
+              p.setAttribute("class", "character__name");
+              document.body.appendChild(p);
+
+              const img = document.createElement("img");
+              img.src = element.image;
+              img.setAttribute("class", "character__image");
+              document.body.appendChild(img);
             });    
           })
       }
