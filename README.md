@@ -49,6 +49,8 @@ To develop this document, you can follow the steps provided below:
 * [Joey Lee](https://jk-lee.com) -- adjunct professor -- [NYU ITP](https://itp.nyu.edu)
 * [Cassie Tarakajian](https://cassietarakajian.com/) -- adjunct professor -- [NYU ITP](https://itp.nyu.edu)
 * [The Good Project Readme Project](https://github.com/itp-dwd/2020-spring/blob/master/templates/readme-template.md)
+* Reddit user [u/Stoned2deth](https://www.reddit.com/user/Stoned2deth/) for his Rick and Morty 8bit characters. Originally found in this [Reddit post.](https://www.reddit.com/r/rickandmorty/comments/62yiew/8_bit_rick_and_morty_characters_i_worked_on/)
+
 
 
 ***

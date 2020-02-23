@@ -31,9 +31,14 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+.loadPage__imagelogo{
+  margin-top: 1rem;
+  width:30vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 .loadPage__welcome{
   width:15vw;
-  margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
   font-family: Minecraft;
@@ -48,27 +53,35 @@ body{
   flex-direction: column;
   justify-items: center;
 }
-.headerContainer{
+.header{
   display: flex;
-  margin: 3rem;
   flex-direction: row;
-  justify-items: flex-start;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  justify-content: space-between;
+
+
+}
+.header__image{
+  height: 100%;
 }
 
-.mainContainer{
+.main{
   display: flex;
   margin: 3rem;
   flex-direction: row;
   background-color: #242525;
 }
 
-.catalogueContainer {
+.catalogue {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   margin: 0;
-  padding: 0;
+  padding: 1%;
 
 }
 
@@ -77,39 +90,53 @@ body{
   flex-direction: row;
   flex-grow: 1;
   border: 1px solid greenyellow;
-  height: 400px;
+  justify-content: space-around;
+  height: 300px;
+  width:40%;
+  margin: 1%;
+  
+}
+
+
+.character--focus{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  border: 1px solid white;
   justify-content: space-around;
   flex-wrap: wrap;
   width:40%;
+  margin: 1%;
 }
+
 
 .character__image {
   border: 1px solid greenyellow;
   border-radius: 4px;
   padding: 5px;
-  width:400px;
-
+  width:50%;
+  margin-left: 0px;
 }
 
 .character__text{
   display:flex;
   flex-direction: column;
-  height: 100px;
   font-family: Minecraft;
   color:greenyellow;
   text-align: left;
 }
+.character__textItem{
+  display:flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-between;
 
-.character--focus{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid greenyellow;
 }
 
 .prevButton{
   align-items: center;
 }
 
-@media screen and (max-height:900px) {
+@media screen and (max-width:950px) {
+
 }

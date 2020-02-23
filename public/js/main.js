@@ -9,16 +9,21 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadPage() {
-  let textSize = '100%';
+  let textSize = '150%';
 
   const loadPage = document.createElement("div");
   loadPage.setAttribute("class", "loadPage");
   document.body.appendChild(loadPage);
 
+  const bitLogo = document.createElement("img");
+  bitLogo.src = 'assets/8bitlogo.png';
+  bitLogo.setAttribute("class", "loadPage__imagelogo");
+  loadPage.appendChild(bitLogo);
+
   const loadWelcome = document.createElement("p");
   loadWelcome.textContent = `We have detected you come from universe C-137`;
   loadWelcome.setAttribute("class", "loadPage__welcome");
-  loadWelcome.style.fontSize = '120%';
+  loadWelcome.style.fontSize = textSize;
   loadPage.appendChild(loadWelcome);
 
   const loadEnterLink = document.createElement("a");
@@ -34,6 +39,8 @@ function loadPage() {
   const loadEnter = document.createElement("p");
   loadEnter.textContent = `Enter Database`;
   loadEnter.setAttribute("class", "loadPage__enter");
+  loadEnter.style.fontSize = textSize;
+
   loadEnterLink.appendChild(loadEnter);
 
   loadImg.onclick = async () => {
@@ -57,8 +64,6 @@ function loadDatabase() {
   let charCnt = 0;
   let pageNum = 0;
 
-  let textSize = '100%';
-  let labelSize = '120%';
 
   //Preload the available characters
   //Parse the response stream as a JSON
@@ -102,17 +107,28 @@ function loadDatabase() {
 
   pageNum++;
 
-  const headerContainer = document.createElement("div");
-  headerContainer.setAttribute("class", "headerContainer");
-  document.body.appendChild(headerContainer);
+  const header = document.createElement("div");
+  header.setAttribute("class", "header");
+  document.body.appendChild(header);
 
-  const mainContainer = document.createElement("div");
-  mainContainer.setAttribute("class", "mainContainer");
-  document.body.appendChild(mainContainer);
+  const main = document.createElement("div");
+  main.setAttribute("class", "main");
+  document.body.appendChild(main);
 
-  const catalogueContainer = document.createElement("div");
-  catalogueContainer.setAttribute("class", "catalogueContainer");
-  mainContainer.appendChild(catalogueContainer);
+  const catalogue = document.createElement("div");
+  catalogue.setAttribute("class", "catalogue");
+  main.appendChild(catalogue);
+
+  const bitLogo = document.createElement("img");
+  bitLogo.src = 'assets/8bitlogo.png';
+  bitLogo.setAttribute("class", "header__image");
+  header.appendChild(bitLogo);
+
+  const bitImg = document.createElement("img");
+  bitImg.src = 'assets/8bitRickMorty.png';
+  bitImg.setAttribute("class", "header__image");
+  header.appendChild(bitImg);
+
 
 
   //Loop through every available page and grab every result
@@ -140,10 +156,14 @@ function loadDatabase() {
           } */
       result.results.forEach(element => {
 
+
+        let textSize = '75%';
+        let labelSize = '100%';
+
         //Make a new <div> container with each character's info
         const charContainer = document.createElement("div");
         charContainer.setAttribute("class", "character--normal");
-        catalogueContainer.appendChild(charContainer);
+        catalogue.appendChild(charContainer);
 
         //Make a new <img> element with each character's image
         const img = document.createElement("img");
@@ -153,68 +173,83 @@ function loadDatabase() {
 
         //Make a new <img> element with each character's image
         const charText = document.createElement("div");
-        charText.setAttribute("class", "character__Text");
+        charText.setAttribute("class", "character__text");
         charContainer.appendChild(charText);
 
         //Make a new <p> element with each character's name
         const charName = document.createElement("p");
         const nameLabel = document.createElement("p");
+        const nameDiv = document.createElement("div");
+        nameDiv.setAttribute("class", "character__textItem");
         nameLabel.textContent = `Name:`;
         charName.textContent = `${element.name}`;
         nameLabel.setAttribute("class", "character__name");
         nameLabel.style.fontSize = textSize;
         charName.setAttribute("class", "character__name");
         charName.style.fontSize = labelSize;
-        charText.appendChild(nameLabel);
-        charText.appendChild(charName);
+        nameDiv.appendChild(nameLabel);
+        nameDiv.appendChild(charName);
+        charText.appendChild(nameDiv);
 
         //Make a new <p> element with each character's status
         const charStatus = document.createElement("p");
         const statusLabel = document.createElement("p");
+        const statusDiv = document.createElement("div");
+        statusDiv.setAttribute("class", "character__textItem");
         statusLabel.textContent = `Status:`;
         charStatus.textContent = `${element.status}`;
         statusLabel.setAttribute("class", "character__status");
         statusLabel.style.fontSize = textSize;
         charStatus.setAttribute("class", "character__status");
         charStatus.style.fontSize = labelSize;
-        charText.appendChild(statusLabel);
-        charText.appendChild(charStatus);
+        statusDiv.appendChild(statusLabel);
+        statusDiv.appendChild(charStatus);
+        charText.appendChild(statusDiv);
 
         //Make a new <p> element with each character's species
         const charSpecies = document.createElement("p");
         const speciesLabel = document.createElement("p");
+        const speciesDiv = document.createElement("div");
+        speciesDiv.setAttribute("class", "character__textItem");
         speciesLabel.textContent = `Species:`;
         charSpecies.textContent = `${element.species}`;
         speciesLabel.setAttribute("class", "character__species");
         speciesLabel.style.fontSize = textSize;
         charSpecies.setAttribute("class", "character__species");
         charSpecies.style.fontSize = labelSize;
-        charText.appendChild(speciesLabel);
-        charText.appendChild(charSpecies);
+        speciesDiv.appendChild(speciesLabel);
+        speciesDiv.appendChild(charSpecies);
+        charText.appendChild(speciesDiv);
 
         //Make a new <p> element with each character's origin
         const charOrigin = document.createElement("p");
         const originLabel = document.createElement("p");
+        const originDiv = document.createElement("div");
+        originDiv.setAttribute("class", "character__textItem");
         originLabel.textContent = `Origin:`;
         charOrigin.textContent = `${element.origin.name}`;
         originLabel.setAttribute("class", "character__origin");
         originLabel.style.fontSize = textSize;
         charOrigin.setAttribute("class", "character__origin");
         charOrigin.style.fontSize = labelSize;
-        charText.appendChild(originLabel);
-        charText.appendChild(charOrigin);
+        originDiv.appendChild(originLabel);
+        originDiv.appendChild(charOrigin);
+        charText.appendChild(originDiv);
 
         //Make a new <p> element with each character's location
         const charLoc = document.createElement("p");
         const locLabel = document.createElement("p");
+        const locationDiv = document.createElement("div");
+        locationDiv.setAttribute("class", "character__textItem");
         locLabel.textContent = `Location:`;
         charLoc.textContent = `${element.location.name}`;
         locLabel.setAttribute("class", "character__location");
         locLabel.style.fontSize = textSize;
         charLoc.setAttribute("class", "character__location");
         charLoc.style.fontSize = labelSize;
-        charText.appendChild(locLabel);
-        charText.appendChild(charLoc);
+        locationDiv.appendChild(locLabel);
+        locationDiv.appendChild(charLoc);
+        charText.appendChild(originDiv);
 
       });
     })
