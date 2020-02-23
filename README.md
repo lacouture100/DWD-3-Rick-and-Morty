@@ -54,7 +54,7 @@ To develop this document, you can follow the steps provided below:
 ***
 # Notes & Process
 
-My process began with deciding which API to use, and I believe I went through 8 different APIs before deciding to use the Rick & Morty API. The series is fantastic and I love it, and if you haven't checked it out I encourage you to do so. In any case, after settling on the API I retrieved the data I needed and setup the base for the content thtat would be displayed in the webpage.
+My process began with deciding which API to use, and I believe I went through 8 different APIs before deciding to use the Rick & Morty API. The series is fantastic and I love it, and if you haven't checked it out I encourage you to do so. In any case, after settling on the API I retrieved the data I needed and setup the base for the content that would be displayed in the webpage.
 
 
 
@@ -79,7 +79,7 @@ With steady access to the JSON I could play with the data in any way I wanted. B
 ![Looking closer into the array of characters in the JSON](assets/process_2.PNG)
 ![Grabbing each character individually](assets/process_3.PNG)
 
-It didn'y make much sense to display twenty different pages of info, so why not see all of the names right away? Whay not make every name a paragraph right away?
+It didn't make much sense to display twenty different pages of info, so why not see all of the names right away? Why not make every name a paragraph right away?
 
 
     //Button to retrieve every character

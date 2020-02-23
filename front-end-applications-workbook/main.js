@@ -55,8 +55,6 @@ $todoBtn.onclick = function (event) {
     todoList.appendChild(li);
     todoInput.value="";
 }
-
-
 //API Work
 
 fetch('https://jsonplaceholder.typicode.com/todos/1')

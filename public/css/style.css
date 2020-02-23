@@ -1,13 +1,34 @@
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: Minecraft;
+  src: url(assets/Minecraft.ttf);
+}
+
 
 html {
   font-size: 16px;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Add your CSS Styles Here */
+
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+}
+
+.catalogueRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.characterCard{
+  display: flex;
+  flex-direction: column;
+
+}
