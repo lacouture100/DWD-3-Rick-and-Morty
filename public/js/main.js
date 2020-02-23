@@ -11,19 +11,39 @@ function bindButton() {
 
   const url1 = "https://foaas.com/version";
   const url2 = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
-  const url3 = "https://trefle.io/api/plants/116138?token=NGxtMVFYbjdNV2JtTzQzK0xiQ2dTZz09"
+  const url3 = "https://trefle.io/api/plants/116138?token=NGxtMVFYbjdNV2JtTzQzK0xiQ2dTZz09";
   let contentPgs = 0;
   let charCnt = 0;
-  let userIP = "";
+  let pageNum=0;
 
+  let textSize = '100%';
+  let labelSize = '120%';
 
   //Preload the available characters
   //Parse the response stream as a JSON
   //Make a new <div> container with all of the characters
+  const mainContainer = document.createElement("div");
+  mainContainer.setAttribute("class", "mainContainer");
+  document.body.appendChild(mainContainer);
 
-  const catContainer = document.createElement("div");
-  catContainer.setAttribute("class", "mainContainer");
-  document.body.appendChild(catContainer);
+
+  var charContainerSelector = document.querySelector(".characterCard--normal");
+  if (charContainerSelector != null){
+  console.log("Container detected!");
+  charContainerSelector.addEventListener('mouseover', function () {
+    console.log("focus!");
+    if (charContainerSelector.contains('characterCard--normal')) {
+      charContainerSelector.remove('characterCard--normal')
+      charContainerSelector.add('characterCard--focus')
+      
+    } else {
+      charContainerSelector.remove('characterCard--focus')
+      charContainerSelector.add('characterCard--normal')
+
+    }
+  });
+  }
+
 
 
   fetch(url)
@@ -42,10 +62,12 @@ function bindButton() {
 
   // to use await, the function must be marked as async
   button.onclick = async () => {
+    pageNum ++;
+
 
     //Loop through every available page and grab every result
     let contentPgs = 2;
-    for (var pageNum = 1; pageNum < contentPgs; pageNum++) {
+    //for (var pageNum = 1; pageNum < contentPgs; pageNum++) {
       fetch('https://rickandmortyapi.com/api/character/?page=' + pageNum)
 
         //Fetch page number pagNum and parse as JSON
@@ -57,8 +79,8 @@ function bindButton() {
 
             //Make a new <div> container with each character's info
             const charContainer = document.createElement("div");
-            charContainer.setAttribute("class", "characterCard");
-            catContainer.appendChild(charContainer);
+            charContainer.setAttribute("class", "characterCard--normal");
+            mainContainer.appendChild(charContainer);
 
             //Make a new <img> element with each character's image
             const img = document.createElement("img");
@@ -68,36 +90,67 @@ function bindButton() {
 
             //Make a new <p> element with each character's name
             const charName = document.createElement("p");
-            charName.textContent = `Name: ${element.name}`;
+            const nameLabel = document.createElement("p");
+            nameLabel.textContent = `Name:`;
+            charName.textContent = `${element.name}`;
+            nameLabel.setAttribute("class", "character__name");
+            nameLabel.style.fontSize = textSize;
             charName.setAttribute("class", "character__name");
+            charName.style.fontSize = labelSize;
+            charContainer.appendChild(nameLabel);
             charContainer.appendChild(charName);
 
             //Make a new <p> element with each character's status
             const charStatus = document.createElement("p");
-            charStatus.textContent = `Status: ${element.status}`;
+            const statusLabel = document.createElement("p");
+            statusLabel.textContent = `Status:`;
+            charStatus.textContent = `${element.status}`;
+            statusLabel.setAttribute("class", "character__status");
+            statusLabel.style.fontSize = textSize;
             charStatus.setAttribute("class", "character__status");
+            charStatus.style.fontSize = labelSize;
+            charContainer.appendChild(statusLabel);
             charContainer.appendChild(charStatus);
 
             //Make a new <p> element with each character's species
             const charSpecies = document.createElement("p");
-            charSpecies.textContent = `Species: ${element.species}`;
+            const speciesLabel = document.createElement("p");
+            speciesLabel.textContent = `Species:`;
+            charSpecies.textContent = `${element.species}`;
+            speciesLabel.setAttribute("class", "character__species");
+            speciesLabel.style.fontSize = textSize;
             charSpecies.setAttribute("class", "character__species");
+            charSpecies.style.fontSize = labelSize;
+            charContainer.appendChild(speciesLabel);
             charContainer.appendChild(charSpecies);
 
             //Make a new <p> element with each character's origin
             const charOrigin = document.createElement("p");
-            charOrigin.textContent = `Origin: ${element.origin.name}`;
+            const originLabel = document.createElement("p");
+            originLabel.textContent = `Origin:`;
+            charOrigin.textContent = `${element.origin.name}`;
+            originLabel.setAttribute("class", "character__origin");
+            originLabel.style.fontSize = textSize;
             charOrigin.setAttribute("class", "character__origin");
+            charOrigin.style.fontSize = labelSize;
+            charContainer.appendChild(originLabel);
             charContainer.appendChild(charOrigin);
 
             //Make a new <p> element with each character's location
             const charLoc = document.createElement("p");
-            charLoc.textContent = `Location: ${element.location.name}`;
+            const locLabel = document.createElement("p");
+            locLabel.textContent = `Location:`;
+            charLoc.textContent = `${element.location.name}`;
+            locLabel.setAttribute("class", "character__location");
+            locLabel.style.fontSize = textSize;
             charLoc.setAttribute("class", "character__location");
+            charLoc.style.fontSize = labelSize;
+            charContainer.appendChild(locLabel);
             charContainer.appendChild(charLoc);
 
           });
+
         })
     }
-  }
+  //}
 }

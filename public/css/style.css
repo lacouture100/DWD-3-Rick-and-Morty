@@ -7,28 +7,43 @@
 }
 
 
-html {
+p {
   font-size: 16px;
+  font-family: Minecraft;
+  color:greenyellow;
 }
-
-body {
-}
-
 
 .mainContainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-evenly;
   
 }
 
+img {
+  border: 1px solid greenyellow;
+  border-radius: 4px;
+  padding: 5px;
+  width:300px;
+}
 .catalogueRow {
   display: flex;
   flex-direction: row;
 }
 
-.characterCard{
+.characterCard--normal{
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+}
+.characterCard--focus{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
 
+.characterText{
+  display:flex;
+  flex-direction: column;
 }
