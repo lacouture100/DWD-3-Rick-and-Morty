@@ -16,8 +16,9 @@ p {
 .mainContainer {
   display: flex;
   flex-wrap: wrap;
+  margin: 3rem;
   flex-direction: row;
-  justify-content: space-evenly;
+  
   
 }
 
@@ -25,7 +26,9 @@ img {
   border: 1px solid greenyellow;
   border-radius: 4px;
   padding: 5px;
-  width:300px;
+  width:2 vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 .catalogueRow {
   display: flex;
@@ -36,14 +39,24 @@ img {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  border: 1px solid greenyellow;
+  text-align: center;
+  height: 450px;
+  justify-items: stretch;
+    flex-wrap: wrap;
+
 }
+
 .characterCard--focus{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex-grow: 2;
+  border: 1px solid greenyellow;
 }
 
 .characterText{
   display:flex;
   flex-direction: column;
+  height: 100px;
 }
