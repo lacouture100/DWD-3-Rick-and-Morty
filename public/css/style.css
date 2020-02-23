@@ -6,57 +6,110 @@
   src: url(assets/Minecraft.ttf);
 }
 
-
 p {
   font-size: 16px;
   font-family: Minecraft;
   color:greenyellow;
 }
-
-.mainContainer {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 3rem;
-  flex-direction: row;
-  
-  
+body{
+  background-color: #000000;
 }
 
-img {
-  border: 1px solid greenyellow;
-  border-radius: 4px;
-  padding: 5px;
-  width:2 vw;
+.loadPage{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  flex-direction: column;
+  background-color: #242525;
+  width: 95vw;
+  height: 90vh;
+ 
+}
+.loadPage__image{
+  width:10vw;
   margin-left: auto;
   margin-right: auto;
 }
-.catalogueRow {
+.loadPage__welcome{
+  width:15vw;
+  margin-top: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Minecraft;
+  color:whitesmoke;
+  text-align: center;
+}
+.loadPage__enter{
+  display: flex;
+  margin: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  justify-items: center;
+}
+.headerContainer{
+  display: flex;
+  margin: 3rem;
+  flex-direction: row;
+  justify-items: flex-start;
+}
+
+.mainContainer{
+  display: flex;
+  margin: 3rem;
+  flex-direction: row;
+  background-color: #242525;
+}
+
+.catalogueContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
+}
+
+.character--normal{
   display: flex;
   flex-direction: row;
-}
-
-.characterCard--normal{
-  display: flex;
-  flex-direction: column;
   flex-grow: 1;
   border: 1px solid greenyellow;
-  text-align: center;
-  height: 450px;
-  justify-items: stretch;
-    flex-wrap: wrap;
-
+  height: 400px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width:40%;
 }
 
-.characterCard--focus{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 2;
+.character__image {
   border: 1px solid greenyellow;
+  border-radius: 4px;
+  padding: 5px;
+  width:400px;
+
 }
 
-.characterText{
+.character__text{
   display:flex;
   flex-direction: column;
   height: 100px;
+  font-family: Minecraft;
+  color:greenyellow;
+  text-align: left;
+}
+
+.character--focus{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid greenyellow;
+}
+
+.prevButton{
+  align-items: center;
+}
+
+@media screen and (max-height:900px) {
 }
