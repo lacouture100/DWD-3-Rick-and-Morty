@@ -138,7 +138,13 @@ It didn't have much sense to upload every single character right away. So I thou
 
 Finally, I played around with the whole styling, padding and margins. And even though I am not completely satisfied with the letter/ positioning configuration, I am content to know it is a matter of decision and not lack of experimentation.
 
-![Final look](assets/processUI_8.PNG)
+![Final UI look](assets/processUI_8.PNG)
+
+At last implemented some interactions with JS, shown below. They mainly are content changers for the site, loading and removing content according to the user's input.The first one is an intro image which takes you to the main database. Inside, you have two options. If you click on the Rick and Morty logo you will go back to the launch site. If you click on the characters on the top you will see more charactersbeing pulled from the API.
+
+Final look!
+
+![Final look](assets/finalShow_360.gif)
 
 
 
