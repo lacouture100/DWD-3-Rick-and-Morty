@@ -163,4 +163,6 @@ Final look!
 
 
 ## References
-- 
+ -  [The Rick & Morty official website.](https://www.rickandmorty.com/)
+ -  [The Rick & Morty 24/7 Marathon stream](https://www.adultswim.com/streams/rick-and-morty) which kept me going.
+
