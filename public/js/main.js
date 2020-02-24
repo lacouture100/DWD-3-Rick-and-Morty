@@ -14,7 +14,7 @@ function loadPage() {
   const loadPage = document.createElement("div");
   loadPage.setAttribute("class", "loadPage");
   document.body.appendChild(loadPage);
-
+  
   const bitLogo = document.createElement("img");
   bitLogo.src = 'assets/8bitlogo.png';
   bitLogo.setAttribute("class", "loadPage__imagelogo");
@@ -64,6 +64,8 @@ function loadDatabase() {
   let charCnt = 0;
   let pageNum = 0;
 
+  let textSize = '80%';
+  let labelSize = '100%';
 
   //Preload the available characters
   //Parse the response stream as a JSON
@@ -156,10 +158,6 @@ function loadDatabase() {
           } */
       result.results.forEach(element => {
 
-
-        let textSize = '75%';
-        let labelSize = '100%';
-
         //Make a new <div> container with each character's info
         const charContainer = document.createElement("div");
         charContainer.setAttribute("class", "character--normal");
@@ -180,12 +178,12 @@ function loadDatabase() {
         const charName = document.createElement("p");
         const nameLabel = document.createElement("p");
         const nameDiv = document.createElement("div");
-        nameDiv.setAttribute("class", "character__textItem");
+        nameDiv.setAttribute("class", "character__field");
         nameLabel.textContent = `Name:`;
         charName.textContent = `${element.name}`;
-        nameLabel.setAttribute("class", "character__name");
+        nameLabel.setAttribute("class", "character__label");
         nameLabel.style.fontSize = textSize;
-        charName.setAttribute("class", "character__name");
+        charName.setAttribute("class", "character__value");
         charName.style.fontSize = labelSize;
         nameDiv.appendChild(nameLabel);
         nameDiv.appendChild(charName);
@@ -195,12 +193,12 @@ function loadDatabase() {
         const charStatus = document.createElement("p");
         const statusLabel = document.createElement("p");
         const statusDiv = document.createElement("div");
-        statusDiv.setAttribute("class", "character__textItem");
+        statusDiv.setAttribute("class", "character__field");
         statusLabel.textContent = `Status:`;
         charStatus.textContent = `${element.status}`;
-        statusLabel.setAttribute("class", "character__status");
+        statusLabel.setAttribute("class", "character__label");
         statusLabel.style.fontSize = textSize;
-        charStatus.setAttribute("class", "character__status");
+        charStatus.setAttribute("class", "character__value");
         charStatus.style.fontSize = labelSize;
         statusDiv.appendChild(statusLabel);
         statusDiv.appendChild(charStatus);
@@ -210,12 +208,12 @@ function loadDatabase() {
         const charSpecies = document.createElement("p");
         const speciesLabel = document.createElement("p");
         const speciesDiv = document.createElement("div");
-        speciesDiv.setAttribute("class", "character__textItem");
+        speciesDiv.setAttribute("class", "character__field");
         speciesLabel.textContent = `Species:`;
         charSpecies.textContent = `${element.species}`;
-        speciesLabel.setAttribute("class", "character__species");
+        speciesLabel.setAttribute("class", "character__label");
         speciesLabel.style.fontSize = textSize;
-        charSpecies.setAttribute("class", "character__species");
+        charSpecies.setAttribute("class", "character__value");
         charSpecies.style.fontSize = labelSize;
         speciesDiv.appendChild(speciesLabel);
         speciesDiv.appendChild(charSpecies);
@@ -225,12 +223,12 @@ function loadDatabase() {
         const charOrigin = document.createElement("p");
         const originLabel = document.createElement("p");
         const originDiv = document.createElement("div");
-        originDiv.setAttribute("class", "character__textItem");
+        originDiv.setAttribute("class", "character__field");
         originLabel.textContent = `Origin:`;
         charOrigin.textContent = `${element.origin.name}`;
-        originLabel.setAttribute("class", "character__origin");
+        originLabel.setAttribute("class", "character__label");
         originLabel.style.fontSize = textSize;
-        charOrigin.setAttribute("class", "character__origin");
+        charOrigin.setAttribute("class", "character__value");
         charOrigin.style.fontSize = labelSize;
         originDiv.appendChild(originLabel);
         originDiv.appendChild(charOrigin);
@@ -240,17 +238,16 @@ function loadDatabase() {
         const charLoc = document.createElement("p");
         const locLabel = document.createElement("p");
         const locationDiv = document.createElement("div");
-        locationDiv.setAttribute("class", "character__textItem");
+        locationDiv.setAttribute("class", "character__field");
         locLabel.textContent = `Location:`;
         charLoc.textContent = `${element.location.name}`;
-        locLabel.setAttribute("class", "character__location");
+        locLabel.setAttribute("class", "character__label");
         locLabel.style.fontSize = textSize;
-        charLoc.setAttribute("class", "character__location");
+        charLoc.setAttribute("class", "character__value");
         charLoc.style.fontSize = labelSize;
         locationDiv.appendChild(locLabel);
         locationDiv.appendChild(charLoc);
-        charText.appendChild(originDiv);
-
+        charText.appendChild(locationDiv);
       });
     })
 
