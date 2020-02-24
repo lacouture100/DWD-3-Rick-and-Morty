@@ -60,7 +60,7 @@ function loadDatabase() {
   let charCnt = 0;
 
   let textSize = '100%';
-  let labelSize = '110%';
+  let labelSize = '100%';
 
   fetch(url)
     .then(response => {
