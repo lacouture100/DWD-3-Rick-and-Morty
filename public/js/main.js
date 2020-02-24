@@ -76,7 +76,7 @@ function loadDatabase() {
       return err;
     })
 
-  const header = document.createElement("div");
+  const header = document.createElement("header");
   header.setAttribute("class", "header");
   document.body.appendChild(header);
 
@@ -93,12 +93,17 @@ function loadDatabase() {
   bitLogo.setAttribute("class", "header__image");
   header.appendChild(bitLogo);
 
+  const loadNext = document.createElement("a");
+  loadNext.setAttribute("href", "#")
+  loadNext.setAttribute("class", "header__imageLink");
+  header.appendChild(loadNext);
 
   const bitImg = document.createElement("img");
   bitImg.src = 'assets/8bitRickMorty.png';
   bitImg.setAttribute("class", "header__image");
-  header.appendChild(bitImg);
+  loadNext.appendChild(bitImg);
 
+  //Load more characters!
   bitImg.onclick = async () => {
     document.querySelector(".header").remove();
     document.querySelector(".main").remove();
@@ -108,7 +113,6 @@ function loadDatabase() {
     } else {
       pageNum=1;
     }
-
   }
 
 
