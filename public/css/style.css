@@ -13,17 +13,16 @@ p {
 }
 body{
   background-color: #000000;
+  min-width: 1000px;
 }
 
 .loadPage{
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5vh;
+  margin: 1rem;
   flex-direction: column;
   background-color: #242525;
-  width: 95vw;
-  height: 90vh;
+
+  height: 97vh;
  
 }
 .loadPage__image{
@@ -44,6 +43,8 @@ body{
   font-family: Minecraft;
   color:whitesmoke;
   text-align: center;
+  font-size: 24px;
+
 }
 .loadPage__enter{
   display: flex;
@@ -52,6 +53,8 @@ body{
   margin-right: auto;
   flex-direction: column;
   justify-items: center;
+  font-size: 24px;
+
 }
 .header{
   display: flex;
@@ -91,7 +94,7 @@ body{
   flex-grow: 1;
   border: 1px solid greenyellow;
   height: 300px;
-  width:40%;
+  width:30%;
   margin: 1%;
   
 }
@@ -102,9 +105,10 @@ body{
   flex-direction: row;
   flex-grow: 1;
   border: 1px solid white;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width:40%;
+  background-color: #4a4b4a;
+  height: 300px;
+
+  width: 30%;
   margin: 1%;
 }
 
@@ -113,7 +117,7 @@ body{
   border: 1px solid greenyellow;
   border-radius: 4px;
   padding: 5px;
-  width:20vw;
+  width:15vw;
 
   margin-left: 0px;
 }
@@ -137,14 +141,97 @@ body{
 .character__label{
 }
 .character__value{
-  display:flex;
   text-align: right;
+  color:#FFFFFF ;
 }
 
 .prevButton{
   align-items: center;
 }
 
-@media screen and (max-width:950px) {
+@media screen and (max-width:1300px) {
+  .character--normal{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    border: 1px solid greenyellow;
+    height: 300px;
+    width:40%;
+    margin: 1%;
+    
+  }
+  .character--focus{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    border: 1px solid white;
+    background-color: #4a4b4a;
 
+    height: 300px;
+    width:40%;
+    margin: 1%;
+    
+  }
+}
+@media screen and (max-width:400px) {
+  .character--normal{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    border: 1px solid greenyellow;
+    height: 300px;
+    width:80%;
+    margin: 1%;
+    
+  }
+  .character--normal{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    border: 1px solid white;
+    background-color: #4a4b4a;
+    height: 300px;
+    width:80%;
+    margin: 1%;
+    
+  }
+}
+@media screen and (max-height:820px) {
+  .loadPage{
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+    background-color: #242525;
+    height: 93vh;
+  }
+  .loadPage__image{
+    width:5vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .loadPage__imagelogo{
+    margin-top: 1rem;
+    width:20vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .loadPage__welcome{
+    width:10vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Minecraft;
+    color:whitesmoke;
+    text-align: center;
+    font-size: 12px;
+  }
+  .loadPage__enter{
+    display: flex;
+    margin: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    justify-items: center;
+    font-size: 12px;
+
+  }
 }
