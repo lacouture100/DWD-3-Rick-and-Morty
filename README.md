@@ -39,13 +39,14 @@ To develop this document, you can follow the steps provided below:
 * [VS Code](https://code.visualstudio.com/)
 * [Github](https://github.com)
 
-
-## Author
 ***
+## Author
+
 * [Alvaro Lacouture](https://alvarolacouture.com) 
 
-## Acknowledgements
 ***
+## Acknowledgements
+
 * [Joey Lee](https://jk-lee.com) -- adjunct professor -- [NYU ITP](https://itp.nyu.edu)
 * [Cassie Tarakajian](https://cassietarakajian.com/) -- adjunct professor -- [NYU ITP](https://itp.nyu.edu)
 * [The Good Project Readme Project](https://github.com/itp-dwd/2020-spring/blob/master/templates/readme-template.md)
@@ -81,7 +82,7 @@ With steady access to the JSON I could play with the data in any way I wanted. B
 ![Looking closer into the array of characters in the JSON](assets/process_2.PNG)
 ![Grabbing each character individually](assets/process_3.PNG)
 
-It didn't make much sense to display twenty different pages of info, so why not see all of the names right away? Why not make every name a paragraph right away?
+I wanted to test if it was possible to display all different pages, so I decided to take the name parameter from every character available and made it a paragraph element.
 
 
     //Button to retrieve every character
@@ -113,6 +114,34 @@ It didn't make much sense to display twenty different pages of info, so why not 
 Now that I had the names the next logical step would be to grab the images, of course.
 
 ![Displaying every character as a new <p> element](assets/charsImg.gif)
+
+With this information I could start to think about an interface and how each element may appear. 
+![Displaying every character with name and image](assets/processUI_3.PNG)
+![Displaying every character with every info](assets/processUI_4.PNG)
+
+It seemed kind of blunt to have the database with characters appear right away, so I thought about an intro site which would lead into the database. In general I wanted a terminal aesthetic feel, so I went for 8-bit images and lettering. The font is called "Minecraft" and is includded with the repository. To make the intro page I first designed it in Photoshop, and later on replicated it on CSS with minor adjustments. Using flex was essential to the whole process, and made me realize the less parameters and independent positioning you introduce in the styling the better it will work.
+
+SKETCH:
+![Intro Page](assets/IdeaEnter.PNG)
+
+RESULT:
+![Intro Page](assets/processUI_5.PNG)
+***
+
+I wanted each character to be displayed as a card, with the image to one side and the information to the other. I wanted to give it an old terminal kind of feel, so I went with the Green and Black scheme with white lettering. It also has a crude lettering formatting to amplify the sensation.
+
+![Almost final look](assets/processUI_6.PNG)
+
+It didn't have much sense to upload every single character right away. So I though about introducing a button which would load more characters when the user decided. Though it took me time to decide where should I introduce the button, I decided to just have an image which would cycle through every available page of information given by the API. Thankfully, I had already recovered that number previously when I displayed all of the characters' names.
+
+![Almost final look](assets/processUI_7.PNG)
+
+Finally, I played around with the whole styling, padding and margins. And even though I am not completely satisfied with the letter/ positioning configuration, I am content to know it is a matter of decision and not lack of experimentation.
+
+![Final look](assets/processUI_8.PNG)
+
+
+
 
 
 ***
