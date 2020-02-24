@@ -88,10 +88,15 @@ function loadDatabase() {
   catalogue.setAttribute("class", "catalogue");
   main.appendChild(catalogue);
 
+  const loadHome = document.createElement("a");
+  loadHome.setAttribute("href", "index.html")
+  loadHome.setAttribute("class", "header__imageLink");
+  header.appendChild(loadHome);
+
   const bitLogo = document.createElement("img");
   bitLogo.src = 'assets/8bitlogo.png';
   bitLogo.setAttribute("class", "header__image");
-  header.appendChild(bitLogo);
+  loadHome.appendChild(bitLogo);
 
   const loadNext = document.createElement("a");
   loadNext.setAttribute("href", "#")
