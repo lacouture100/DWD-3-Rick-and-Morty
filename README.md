@@ -147,20 +147,20 @@ Final look!
 ![Final look](assets/finalShow_360.gif)
 
 
-
-
-
 ***
 
-
-
 ## Challenges & Struggles
-  
 
+- After creating the content, how to keep track of individual interactions with containers that have the same class name and were created at the same time. For example, when I loaded all of the characters from the API, how could I detect I had my mouse over one of them and change something according to that individual interaction?
+- I sometimes worked on a 1920x1080 res screen and sometimes in a 4k screen. The change between letter size and content display was massively different until I introduced media queries.
+- Some weird behaviours I could not solve, for example when I click on the image with all the characters to change page the whole div "jumps" a little. Totally clueless as to why. Maybe I put a flex-grow that I forgot about.
+- I would have liked to have more time to create "filters" so that you can see characters according to location, origin, etc...
+- When I click on the next set of characters button it repeats the first page again. Probably too tired to see where is the mistake though. Will go back to it!
 
 ## Questions
-
+- Mostly doubts in terms of how to modify content even further within CSS with JS. Add video filters? Access browser cam?
+- How to access databases with authentication tokens? I tried several different databases before settling on the Rick and Morty one, and even though I could access them through terminal's HTTP requests it was not possible through JS.
 
 
 ## References
-
+- 
